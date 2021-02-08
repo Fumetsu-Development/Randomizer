@@ -1,0 +1,16 @@
+{
+  "name": "@shinigami_dev/randomizer",
+  "version": "1.0.3",
+  "description": "A package to randomize anything, includes many options on how to randomize.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "randomizer",
+    "util"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}
