@@ -1,14 +1,14 @@
-function randomizer(string) {
-    var randomizer = Math.floor(Math.random() * (string.length - 1) + 1);
-    var randomizedArray = string[randomizer];
+function randomizer(string) { //Helper function for (randomize) function
+    const randomizer = Math.floor(Math.random() * (string.length - 1) + 1);
+    const randomizedArray = string[randomizer];
     return randomizedArray;
 }
 function randomize(string) {
     if (!string) {
         throw new Error("No string specified.");
     }
-    var array = [];
-    for (var i = 0; i < string.length; i++) {
+    const array = [];
+    for (let i = 0; i < string.length; i++) {
         array.push(randomizer(string));
         if (array.length == string.length) {
             var randomizedString = array.join('').toString();
@@ -16,6 +16,13 @@ function randomize(string) {
         }
     }
 }
+function arrayPick(array) {
+    if (!array) {
+        throw new Error("No array specified.");
+    }    
+    const randomizer = Math.floor(Math.random() * (string.length - 1) + 1);
+    return array[randomizer];
+}
 module.exports = {
-    randomize: randomize
+    randomize: randomize, arrayPick: arrayPick;
 };
