@@ -3,7 +3,7 @@ function randomizer(string) { //Helper function for (randomize) function
     const randomizedArray = string[randomizer];
     return randomizedArray;
 }
-function randomize(string) {
+function randomize(string, max) {
     if (!string) {
         throw new Error('No string specified.');
     }
@@ -11,18 +11,34 @@ function randomize(string) {
         case 'boolean':
         case 'number':
         case 'undefined':
-            throw new Error('Paramater intakes a String.');
+            throw new Error('Paramater intakes a String or Array.');
             break;
     }
     if (string.length < 2) {
         throw new Error('String must have 1 or more characters.');
     }
+    if (max) {
+        switch (typeof max) {
+            case 'string':
+            case 'boolean':
+            case 'undefined':
+                throw new Error('Paramater intakes a number.');
+                break;
+        }
+        if (Array.isArray(max)) {
+            throw new Error('Paramater intakes a number.');
+        }
+    }
     const array = [];
     for (let i = 0; i < string.length; i++) {
         array.push(randomizer(string));
         if (array.length == string.length) {
-            var randomizedString = array.join('').toString();
-            return randomizedString;
+            const randomizedString = array.join('').toString();
+            if (!max) {
+                return randomizedString;
+            } else {
+                return randomizedString.slice(0, max);
+            }
         }
     }
 }
