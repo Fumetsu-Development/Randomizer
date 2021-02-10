@@ -62,5 +62,5 @@ function arrayPick(array) {
     return array[randomizer];
 }
 module.exports = {
-    randomize: randomize, arrayPick: arrayPick;
+    randomize: randomize, arrayPick: arrayPick
 };
