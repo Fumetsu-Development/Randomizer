@@ -42,6 +42,33 @@ function randomize(string, max) {
         }
     }
 }
+function randomNumber(max) {
+    const string = '0123456789';
+    if (max) {
+        switch (typeof max) {
+            case 'string':
+            case 'boolean':
+            case 'undefined':
+                throw new Error('Paramater intakes a number.');
+                break;
+        }
+        if (Array.isArray(max)) {
+            throw new Error('Paramater intakes a number.');
+        }
+    }
+    const array = [];
+    for (let i = 0; i < string.length; i++) {
+        array.push(randomizer(string));
+        if (array.length == string.length) {
+            const randomizedString = array.join('').toString();
+            if (!max) {
+                return parseInt(randomizedString);
+            } else {
+                return parseInt(randomizedString.slice(0, max));
+            }
+        }
+    }
+}
 
 function arrayPick(array) {
     if (!array) {
@@ -61,6 +88,10 @@ function arrayPick(array) {
     const randomizer = Math.floor(Math.random() * (array.length - 1) + 1);
     return array[randomizer];
 }
+
+function randomNumber(max) {
+    const randomizer = Math.floor(1000 + Math.random() * 10000);
+}
 module.exports = {
-    randomize: randomize, arrayPick: arrayPick
+    randomize: randomize, arrayPick: arrayPick, randomNumber: randomNumber
 };
