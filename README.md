@@ -19,5 +19,5 @@ const { numberPick } = require('@shinigami_dev/randomizer'); //Require function.
 
 console.log(numberPick()); //Console log any random number.
 
-console.log(numberPick(10)); //Console log a random number that is 10 digits long.
+console.log(numberPick(Integer)); //Console log a random number that is <Integer> digits long. 
 ```
