@@ -1,6 +1,6 @@
 {
   "name": "@shinigami_dev/randomizer",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "A package to randomize anything, includes many options on how to randomize.",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,13 @@
   ],
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fumetsu-Development/Randomizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fumetsu-Development/Randomizer/issues"
+  },
+  "homepage": "https://github.com/Fumetsu-Development/Randomizer#readme"
 }

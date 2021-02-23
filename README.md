@@ -21,3 +21,4 @@ console.log(numberPick()); //Console log any random number.
 
 console.log(numberPick(Integer)); //Console log a random number that is <Integer> digits long. 
 ```
+* Optional `max` parameter intakes a Number, Returns a Number.

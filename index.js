@@ -3,6 +3,11 @@ function randomizer(string) { //Helper function for (randomize) function
     const randomizedArray = string[randomizer];
     return randomizedArray;
 }
+/**
+ * @param {String} string
+ * @param {Number} max
+ * @returns String
+ */
 function randomize(string, max) {
     if (!string) {
         throw new Error('No string specified.');
@@ -11,7 +16,7 @@ function randomize(string, max) {
         case 'boolean':
         case 'number':
         case 'undefined':
-            throw new Error('Paramater intakes a String or Array.');
+            throw new TypeError('Paramater intakes a String or Array.');
             break;
     }
     if (string.length < 2) {
@@ -22,11 +27,11 @@ function randomize(string, max) {
             case 'string':
             case 'boolean':
             case 'undefined':
-                throw new Error('Paramater intakes a number.');
+                throw new TypeError('Paramater intakes a number.');
                 break;
         }
         if (Array.isArray(max)) {
-            throw new Error('Paramater intakes a number.');
+            throw new TypeError('Paramater intakes a number.');
         }
     }
     const array = [];
@@ -42,6 +47,11 @@ function randomize(string, max) {
         }
     }
 }
+
+/**
+ * @param {Number} max
+ * @returns Number
+ */
 function randomNumber(max) {
     const string = '0123456789';
     if (max) {
@@ -49,11 +59,11 @@ function randomNumber(max) {
             case 'string':
             case 'boolean':
             case 'undefined':
-                throw new Error('Paramater intakes a number.');
+                throw new TypeError('Paramater intakes a number.');
                 break;
         }
         if (Array.isArray(max)) {
-            throw new Error('Paramater intakes a number.');
+            throw new TypeError('Paramater intakes a number.');
         }
     }
     const array = [];
@@ -70,6 +80,10 @@ function randomNumber(max) {
     }
 }
 
+/**
+ * @param {Array} array
+ * @returns Array
+ */
 function arrayPick(array) {
     if (!array) {
         throw new Error('No array specified.');
@@ -79,7 +93,7 @@ function arrayPick(array) {
         case 'number':
         case 'boolean':
         case 'undefined':
-            throw new Error('Paramater intakes an Array.');
+            throw new TypeError('Paramater intakes an Array.');
             break;
     }
     if (array.length < 2) {
@@ -89,9 +103,6 @@ function arrayPick(array) {
     return array[randomizer];
 }
 
-function randomNumber(max) {
-    const randomizer = Math.floor(1000 + Math.random() * 10000);
-}
 module.exports = {
     randomize: randomize, arrayPick: arrayPick, randomNumber: randomNumber
 };
